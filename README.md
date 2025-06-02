@@ -19,3 +19,24 @@ Learn the basics of vector search and RAG with this simple Python implementation
 5.  **Similarity Search:** The query vector is compared to all document vectors in the store using cosine similarity.
 6.  **Retrieve Top Results:** The documents with the highest similarity scores are retrieved.
 7.  **Augment (Basic):** In this simple example, the most relevant document is returned as the "answer" to the query, simulating the retrieval part of RAG.
+
+## Code Explanation
+
+The code is divided into several functions and a class:
+
+*   `tokenize(text)`: Splits input text into a list of lowercase words.
+*   `build_vocab(docs)`: Creates a unique list of words from a list of documents.
+*   `text_to_vector(text, vocab)`: Converts text to a vector based on the provided vocabulary.
+*   `cosine_similarity(v1, v2)`: Calculates the cosine similarity between two vectors.
+*   `VectorStore` Class:
+    *   `__init__(self, documents)`: Initializes the vector store with a list of documents, building the vocabulary and document vectors.
+    *   `search(self, query, k=3)`: Searches for the top `k` documents most similar to the query.
+
+The main part of the script demonstrates how to use the `VectorStore` class with a sample set of documents.
+
+## Future Enhancements (Optional)
+
+*   Implement more advanced tokenization (e.g., removing stop words, stemming/lemmatization).
+*   Use different vectorization techniques (e.g., TF-IDF).
+*   Incorporate a language model to actually generate a response based on the retrieved documents (true RAG).
+*   Improve efficiency for larger document sets.
